@@ -150,7 +150,12 @@ ild <- bind_cols(data.frame(fips),
                  data.frame(dp4s),
                  data.frame(d4),
                  data.frame(d4s)) %>%
-    mutate_each(funs(round((. - mean(.)) / sd(.), 3)), -fips)
+    mutate_each(funs(round((. - mean(.)) / sd(.), 3)), -fips) %>%
+    mutate_each(funs(cut(., breaks = quantile(., seq(0,1,.1)),
+                         include.lowest = TRUE,
+                         labels=seq(0,9,1),
+                         right = FALSE)),
+                -fips)
 
 ## --------------------------------------
 ## COUNTS
@@ -178,23 +183,6 @@ df[is.na(df)] <- 0
 ## save
 write.table(df, file = ddir %+% 'mapdata.tsv', row.names = FALSE,
             quote = FALSE, sep = '\t')
-
-## get min/max
-min <- df %>%
-    select(d:d4s) %>%
-    summarise_each(funs(min))
-
-max <- df %>%
-    select(d:d4s) %>%
-    summarise_each(funs(max))
-
-minmax <- bind_rows(min, max)
-
-## save
-write.table(minmax, file = ddir %+% 'minmax.tsv', row.names = FALSE,
-            quote = FALSE, sep = '\t')
-
-
 
 ## =============================================================================
 ## END FILE

@@ -1,5 +1,4 @@
 title: Measuring college opportunity
-subtitle: Will Doyle and [Benjamin Skinner](http://btskinner.me)
 siteurl: /collegeopp
 github: https://github.com/btskinner/collegeopp
 mail: b.skinner@vanderbilt.edu
@@ -12,5 +11,5 @@ disqus_shortname:
 # Build settings
 markdown:     kramdown
 redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
+  extensions: ['smart', 'tables', 'with_toc_data', 'footnotes']
 permalink:    pretty

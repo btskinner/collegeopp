@@ -38,6 +38,11 @@
     margin: 0 auto;
 }
 
+.footnotes {
+    width: 80%;
+    margin: 0 auto 8rem;
+}
+
 /* Radio Buttons ------------------------------ */
 
 .rbdiv div {

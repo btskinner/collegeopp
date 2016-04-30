@@ -58,12 +58,12 @@ function ready(us, data, names) {
 
     var distance = [["All", "d"],
 		    ["All 4-year", "d4"],
-		    ["In-state 4-year", "d4s"],
 		    ["Public 4-year", "dp4"],
-		    ["In-state, public 4-year", "dp4s"],
 		    ["All 2-year", "d2"],
-		    ["In-state 2-year", "d2s"],
 		    ["Public 2-year", "dp2"],
+		    ["In-state 4-year", "d4s"],
+		    ["In-state, public 4-year", "dp4s"],
+		    ["In-state 2-year", "d2s"],
 		    ["In-state, public 2-year", "dp2s"]]
     , distance_checked = "d";
 
@@ -182,6 +182,12 @@ function ready(us, data, names) {
 		html += id_name_map[d.id] + ': ' + id_val_map[d.id];
 		if ( dcs ) {
 		    html += "0th %tile";
+		} else {
+		    if ( id_val_map[d.id] == 1 ) {
+			html += " school ";
+		    } else {
+			html += " schools";
+		    }
 		}
 		html += "</span>";
 		html += "</div>";
