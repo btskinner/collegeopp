@@ -1,0 +1,217 @@
+/* Containers --------------------------------- */
+
+#viz-container {
+    position: relative;
+    width: 1120px;
+    min-height: 559px;
+    margin-bottom: 5rem;
+}
+
+#map-container {
+    position: relative;
+    float: left;
+    width: 81%;
+}
+
+#side-container {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#buttons-container {
+    position: relative;
+    float: right;
+    width: 19%;
+    margin-top: 2rem;
+}
+
+#tooltip-container {
+    position: relative;
+    float: right;
+    width: 60%;
+    text-align: right;
+}
+
+.posttext {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Radio Buttons ------------------------------ */
+
+.rbdiv div {
+    height: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.rbdiv label {
+    display: block;
+    padding: .25rem 0 .25rem 2.7rem;
+    border-radius: 13px;
+    border: 1px solid #D1D3D4;
+    font-size: .8rem;
+}
+
+.rbdiv input[type="radio"]:empty {
+    display: none;
+}
+
+.rbdiv input[type="radio"]:empty ~ label {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rbdiv input[type="radio"]:empty ~ label:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 2.5em;
+    background: #D1D3D4;
+    border-radius: 13px 0 0 13px;
+}
+
+.rbdiv input[type="radio"]:hover:not(:checked) ~ label {
+    color: #888;
+}
+
+.rbdiv input[type="radio"]:hover:not(:checked) ~ label:before {
+    content: '\2714';
+    text-indent: 0.9em;
+    color: #C2C2C2;
+}
+
+/* .rbdiv input[type="radio"]:checked ~ label { */
+/*     color: #777; */
+/* } */
+
+.rbdiv input[type="radio"]:checked ~ label:before {
+    content: '\2714';
+    text-indent: .9em;
+    color: #333;
+    background-color: #ccc;
+}
+
+.rbdiv input[type="radio"]:focus ~ label:before {
+    box-shadow: 0 0 0 3px #999;
+}
+
+.rbdiv input[type="radio"]:checked ~ label:before {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+
+/* Tooltip ------------------------------------ */
+
+#tooltip {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    display: none;
+}
+
+.tooltip_key {
+    font-weight: bold;
+}
+
+.tooltip_value {
+    float: right;
+}
+
+/* Switch ------------------------------------- */
+
+.switch {
+    position: relative;
+    width: 180px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.switch-checkbox {
+    display: none;
+}
+.switch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #CCCCCC;
+    border-radius: 36px;
+}
+.switch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.switch-inner:before,
+.switch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.switch-inner:before {
+    content: "Distance";
+    padding-left: 2rem;
+    background-color: #666666;
+    color: #FFFFFF;
+}
+
+.switch-inner:after {
+    content: "Indicators";
+    padding-right: 2rem;
+    background-color: #FFFFFF;
+    color: #666666;
+    text-align: right;
+}
+
+.switch-switch {
+    display: block;
+    width: 36px;
+    margin: 0px;
+    background: #666;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 140px;
+    border: 2px solid #CCCCCC;
+    border-radius: 36px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.switch-checkbox:checked + .switch-label .switch-inner {
+    margin-left: 0;
+}
+
+.switch-checkbox:checked + .switch-label .switch-switch {
+    right: 0px;
+}
+
+/* Map classes -------------------------------- */
+
+.counties {
+    fill: none;
+}
+
+.states {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+}
