@@ -85,9 +85,26 @@ each category:
 
 ### Distance
 
+The two cuts of distance measure---all sampled schools vs. only those
+within the same state as the county---produce two distinct types of
+map. 
 
+##### "Move to Ohio" maps
 
-##### Notes
+For the measures that include out-of-state schools, a number of
+"move to Ohio" maps are produced. While upon first glance it may seem
+that the Old Northwest states have the highest density of colleges in
+the country, these maps really measure the nationally-weighted
+center. The large number of colleges in New England pull the college
+density center away from the lower-48 geographic center. 
+
+These maps are most interesting when visualizing how different
+subsamples of schools move this center. While the subsample of only
+public 4-year institutions pulls the center toward the New England
+states, the subsample of public 2-years shifts it further south and
+west, reflecting state systems found in those regions.
+
+### Notes
 [^1]: Provided by the U.S. Census.
 [^2]: Using the [geosphere](https://cran.r-project.org/package=geosphere) package in [R](https://cran.r-project.org).  
 [^3]: The distribution of college distances for each county is right
@@ -95,7 +112,7 @@ each category:
     distribution becomes more normal and the influence of extreme
     values is reduced. Summing the inverse of the values, rather than
     their level, produces a final measure that is positively (rather
-    than negatively) correlated with the number of nearby schools.
+    than negatively) correlated with the number of nearby schools.  
 [^4]: Limited to Title IV participation institutions.
 
 </div>
