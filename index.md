@@ -107,12 +107,7 @@ west, reflecting state systems found in those regions.
 ### Notes
 [^1]: Provided by the U.S. Census.
 [^2]: Using the [geosphere](https://cran.r-project.org/package=geosphere) package in [R](https://cran.r-project.org).  
-[^3]: The distribution of college distances for each county is right
-    skewed. By taking the natural log of these values, the
-    distribution becomes more normal and the influence of extreme
-    values is reduced. Summing the inverse of the values, rather than
-    their level, produces a final measure that is positively (rather
-    than negatively) correlated with the number of nearby schools.  
+[^3]: The distribution of college distances for each county is right skewed. By taking the natural log of these values, the distribution becomes more normal and the influence of extreme values is reduced. Summing the inverse of the values, rather than their level, produces a final measure that is positively (rather than negatively) correlated with the number of nearby schools.
 [^4]: Limited to Title IV participation institutions.
 
 </div>
