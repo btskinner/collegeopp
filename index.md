@@ -63,7 +63,7 @@ numbers mean fewer schools.
 The map above visualizes each of these measures for various samples
 of colleges and universities. For the indicators, a county is shaded
 if there are any schools within the sample in the county. Hovering
-over the county with give the number of schools. Sliding the toggle
+over the county will give the number of schools. Sliding the toggle
 switch gives the distance measures. These too are computed for a
 variety of school samples under one of two conditions. Either all
 relevant schools are included in the measure or only those within the
@@ -91,7 +91,7 @@ map. Because inverse log distance measures aren't particularly
 intuitive, deciles of the z-scores are mapped. Counties with values
 below the 50th percentile are red; those above the 50th are blue. Hues
 for both colors become darker as the values move away from the
-middle. In distribution of all counties, those shaded dark red have
+middle. In the distribution of all counties, those shaded dark red have
 the lowest density of schools whereas those shaded dark blue are at
 the top.
 
@@ -114,7 +114,7 @@ west, reflecting state systems found in those regions.
 
 When only considering in-state schools for each county's measure,
 patchwork maps are produced. Some states, such as California, Florida,
-and North Carolina, remain in the upper percentiles of college density
+and North Carolina, remain in the upper deciles of college density
 no matter the sub-sample. Other states, like Massachusetts, Tennessee,
 and Washington, move in the distribution depending on the type of
 schools considered.
@@ -131,7 +131,7 @@ type of institution.
 [^1]: Provided by the U.S. Census.
 [^2]: Using the [geosphere](https://cran.r-project.org/package=geosphere) package in [R](https://cran.r-project.org).  
 [^3]: The distribution of college distances for each county is right skewed. By taking the natural log of these values, the distribution becomes more normal and the influence of extreme values is reduced. Summing the inverse of the values, rather than their level, produces a final measure that is positively (rather than negatively) correlated with the number of nearby schools.
-[^4]: Limited to Title IV participation institutions.
+[^4]: Limited to Title IV institutions.
 
 </div>
 
