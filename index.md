@@ -87,7 +87,13 @@ each category:
 
 The two cuts of distance measure---all sampled schools vs. only those
 within the same state as the county---produce two distinct types of
-map. 
+map. Because inverse log distance measures aren't particularly
+intuitive, deciles of the z-scores are mapped. Counties with values
+below the 50th percentile are red; those above the 50th are blue. Hues
+for both colors become darker as the values move away from the
+middle. In distribution of all counties, those shaded dark red have
+the lowest density of schools whereas those shaded dark blue are at
+the top.
 
 ##### "Move to Ohio" maps
 
@@ -99,10 +105,27 @@ center. The large number of colleges in New England pull the college
 density center away from the lower-48 geographic center. 
 
 These maps are most interesting when visualizing how different
-subsamples of schools move this center. While the subsample of only
+sub-samples of schools move this center. While the sub-sample of only
 public 4-year institutions pulls the center toward the New England
-states, the subsample of public 2-years shifts it further south and
+states, the sub-sample of public 2-years shifts it further south and
 west, reflecting state systems found in those regions.
+
+##### State patchwork maps
+
+When only considering in-state schools for each county's measure,
+patchwork maps are produced. Some states, such as California, Florida,
+and North Carolina, remain in the upper percentiles of college density
+no matter the sub-sample. Other states, like Massachusetts, Tennessee,
+and Washington, move in the distribution depending on the type of
+schools considered.
+
+Because the differences in college density between states is often
+greater than the differences within, many states have a uniform shade
+in these maps. A few states, however, do show variation within their
+borders. In some cases, like Georgia with in-state 2-year colleges,
+these are around city centers. In others, like in-state public 2-year
+colleges in Kentucky, differences occur in counties that contain that
+type of institution.
 
 ### Notes
 [^1]: Provided by the U.S. Census.
