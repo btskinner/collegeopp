@@ -69,6 +69,24 @@ variety of school samples under one of two conditions. Either all
 relevant schools are included in the measure or only those within the
 same state.
 
+### Indicators
+
+A little over 40% of all counties have at least one postsecondary
+institution[^4] within their borders. Here are the percentages for
+each category:
+
+* Any school: 43.9%
+* Public 4-year: 14.9%
+* Public 2-year: 23.1%
+* Private 4-year: 11.1%
+* Private 2-year: 2.8%
+* Proprietary 4-year: 4.1%
+* Proprietary 2-year: 7.1%
+
+### Distance
+
+
+
 ##### Notes
 [^1]: Provided by the U.S. Census.
 [^2]: Using the [geosphere](https://cran.r-project.org/package=geosphere) package in [R](https://cran.r-project.org).  
@@ -78,6 +96,7 @@ same state.
     values is reduced. Summing the inverse of the values, rather than
     their level, produces a final measure that is positively (rather
     than negatively) correlated with the number of nearby schools.
+[^4]: Limited to Title IV participation institutions.
 
 </div>
 
