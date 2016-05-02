@@ -107,12 +107,12 @@ function ready(us, data, names) {
     var dataColumn = initcheck;
 
     // map dimensions
-    var width = 900
-    , height = 559;
+    var width = 800
+    , height = 500;
 
     // set projection
     var projection = d3.geo.albers()
-	.scale(1242)
+	.scale(1100)
 	.translate([width / 2, height / 2]);
 
     // project paths
