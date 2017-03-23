@@ -64,10 +64,12 @@ function ready(us, data, names) {
 		    ["Public 4-year", "dp4"],
 		    ["All 2-year", "d2"],
 		    ["Public 2-year", "dp2"],
+		    ["Proprietary","df"],
 		    ["In-state 4-year", "d4s"],
 		    ["In-state, public 4-year", "dp4s"],
 		    ["In-state 2-year", "d2s"],
-		    ["In-state, public 2-year", "dp2s"]]
+		    ["In-state, public 2-year", "dp2s"],
+		    ["In-state, proprietary", "dfs"]]
     , distance_checked = "d";
 
     var df = indicators
