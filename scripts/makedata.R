@@ -139,6 +139,18 @@ d4 <- rowSums(log(distmat * mask)^-1, na.rm = TRUE)
 mask <- mask * stmask
 d4s <- rowSums(log(distmat * mask)^-1, na.rm = TRUE)
 
+## private, for-profit
+mask <- inst %>%
+    mutate(privfp2 = ifelse(privfp == 1, 1, Inf)) %>%
+    select(privfp2) %>%
+    .[['privfp2']] %>%
+    replicate(nrow(distmat), .) %>%
+    t(.)
+mask <- ifelse(is.infinite(mask), 0, mask)
+df <- rowSums(log(distmat * mask)^-1, na.rm = TRUE)
+mask <- mask * stmask
+dfs <- rowSums(log(distmat * mask)^-1, na.rm = TRUE)
+
 ## bind inverse log distances into one dataframe; standardize
 ild <- bind_cols(data.frame(fips),
                  data.frame(d),
@@ -149,7 +161,9 @@ ild <- bind_cols(data.frame(fips),
                  data.frame(dp4),
                  data.frame(dp4s),
                  data.frame(d4),
-                 data.frame(d4s)) %>%
+                 data.frame(d4s),
+                 data.frame(df),
+                 data.frame(dfs)) %>%
     mutate_each(funs(round((. - mean(.)) / sd(.), 3)), -fips) %>%
     mutate_each(funs(cut(., breaks = quantile(., seq(0,1,.1)),
                          include.lowest = TRUE,
@@ -173,15 +187,15 @@ counts <- inst %>%
 ## JOIN/SAVE
 ## --------------------------------------
 
-df <- ild %>%
+dff <- ild %>%
     left_join(counts, by = 'fips') %>%
     select(id = fips, sn, s1, s2, s3, s4, s5, s6,
-           d, dp2, dp2s, d2, d2s, dp4, dp4s, d4, d4s)
+           d, dp2, dp2s, d2, d2s, dp4, dp4s, d4, d4s, df, dfs)
 
-df[is.na(df)] <- 0
+dff[is.na(dff)] <- 0
 
 ## save
-write.table(df, file = ddir %+% 'mapdata.tsv', row.names = FALSE,
+write.table(dff, file = ddir %+% 'mapdata.tsv', row.names = FALSE,
             quote = FALSE, sep = '\t')
 
 ## =============================================================================
