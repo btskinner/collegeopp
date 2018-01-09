@@ -20,3 +20,6 @@ vignettes/*.pdf
 
 # data files
 *.csv
+
+# OSX files
+.DS_Store
